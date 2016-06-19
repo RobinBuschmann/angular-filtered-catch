@@ -3,9 +3,9 @@ angular.module('angular-filtered-catch', [])
     $provide.decorator('$q', function ($delegate) {
       var deferred = $delegate.defer();
 
-      // since the Promise implementation of angular 
+      // since the Promise implementation of angular
       // is not available from the outside, we have to
-      // retrieve the constructors prototype through 
+      // retrieve the constructors prototype through
       // deferred.promise constructor property
       deferred.promise.constructor.prototype.catch = function () {
 
@@ -25,7 +25,7 @@ angular.module('angular-filtered-catch', [])
             }
 
             // otherwise the error will be passed
-            throw err;
+            return $delegate.reject(err);
           });
         }
 
