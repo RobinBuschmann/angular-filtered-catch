@@ -7,7 +7,7 @@ This project is an extension for angulars promise implementation, which adds the
 Add _angular-filtered-catch_ as dependency in your project.
 
 ````
-angular.module('your-ng-app', [angular-filtered-catch]);
+angular.module('your-ng-app', ['angular-filtered-catch']);
 
 ````
 
