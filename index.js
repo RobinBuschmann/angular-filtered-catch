@@ -1,6 +1,6 @@
 angular.module('angular-filtered-catch', [])
   .config(['$provide', function ($provide) {
-    $provide.decorator('$q', function ($delegate) {
+    $provide.decorator('$q', ['$delegate', function ($delegate) {
       var deferred = $delegate.defer();
 
       // since the Promise implementation of angular
@@ -35,5 +35,5 @@ angular.module('angular-filtered-catch', [])
       };
 
       return $delegate;
-    });
+    }]);
   }]);
